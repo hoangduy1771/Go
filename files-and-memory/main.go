@@ -54,7 +54,7 @@ func files() {
 	fileBytes, _ := io.ReadAll(file)
 	fmt.Println("File byte: ", fileBytes)
 
-	for (i := 0; i < 10; i++) {
+	for i := 0; i < 10; i++ {
 		OPEN_FILE_AN_WRITE_STRING(file, helloWorld)
 	}
 
@@ -63,7 +63,7 @@ func files() {
 }
 
 func OPEN_FILE_AN_WRITE_STRING(file *os.File, data string) {
-	file, err := file.WriteString(data)
+	_, err := file.WriteString(data)
 	if err != nil {
 		log.Println(err)
 		return
